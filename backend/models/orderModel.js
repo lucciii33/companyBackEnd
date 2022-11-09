@@ -1,23 +1,8 @@
 const mongoose = require('mongoose')
 
-const itemSchema = mongoose.Schema({
-    description: {
-        type: String,
-        required: false
-    },
-    price: {
-        type: Number,
-        required: true
-    },
-    name: {
-        type: String,
-        required: true
-    },
-})
-
 const orderSchema = mongoose.Schema({
-    description: {
-        type: String,
+    items: {
+        type: Array,
         required: false
     },
     totalPrice:{
@@ -30,4 +15,4 @@ const orderSchema = mongoose.Schema({
 //     ref: 'PractitionerProfile'
 //    }
 })
-module.exports = mongoose.model('ItemSchema', itemSchema)
+module.exports = mongoose.model('OrderSchema', orderSchema)
